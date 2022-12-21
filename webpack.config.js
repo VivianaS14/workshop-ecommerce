@@ -27,13 +27,37 @@ module.exports = {
                     }
                 }
             },
-            {
+            /* {
                 test: /\.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader",
                 ],
+            }, */
+            {
+                test: /\.(scss)$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: () => [
+                                    require('autoprefixer')
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -44,6 +68,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
+            template: './src/index.html',
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
