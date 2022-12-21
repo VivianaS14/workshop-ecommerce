@@ -1,0 +1,92 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "2",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "3",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "4",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "5",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "6",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "7",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        },
+        {
+            "id": "8",
+            "name": "",
+            "price": "",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "genre": "",
+            "description": ""
+        }
+    ]
+}
