@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js',
+        clean: true
     },
     resolve: {
         extensions: ['.js']
@@ -63,6 +65,18 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                include: path.resolve(__dirname, './node_modules/bootstrap-icons/font/fonts'),
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'webfonts',
+                        publicPath: '../webfonts',
+                    },
+                }
+            }
         ]
     },
     plugins: [
@@ -73,6 +87,11 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: './style.css'
-        })
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "src/images", to: "images" },
+            ],
+        }),
     ]
 };
