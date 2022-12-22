@@ -24,6 +24,7 @@
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.2.1",
     "babel-loader": "^9.1.0",
     "bootstrap": "^5.2.3",
     "copy-webpack-plugin": "^11.0.0",

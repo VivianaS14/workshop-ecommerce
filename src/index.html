@@ -12,7 +12,7 @@
       <header>
         <nav class="navbar navbar-expand-lg p-3 fs-5">
           <div class="container-fluid border-bottom pb-4">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand products" href="#">
               <img src="./images/logo.svg" alt="Logo-Sneakers" />
             </a>
             <button
@@ -33,17 +33,17 @@
               <ul
                 class="navbar-nav justify-content-around align-items-center gap-4"
               >
-                <li class="nav-item">
+                <li class="nav-item products">
                   <a class="nav-link active" aria-current="page" href="#"
                     >Collections</a
                   >
                 </li>
-                <li class="nav-item">
+                <li id="men-products" class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"
                     >Men</a
                   >
                 </li>
-                <li class="nav-item">
+                <li id="women-prodcuts" class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"
                     >Women</a
                   >
@@ -63,7 +63,12 @@
                 class="navbar-nav justify-content-around align-items-center gap-4"
               >
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
                     ><img src="./images/icon-cart.svg" alt="Cart" width="30"
                   /></a>
                 </li>
@@ -80,8 +85,64 @@
           </div>
         </nav>
       </header>
+      <!-- Carrito -->
+      <div
+        class="modal fade"
+        id="cartModal"
+        tabindex="-1"
+        aria-labelledby="cartModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="cartModalLabel">Cart</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body cart-container">
+              <!-- <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./assets/7.jpg"
+                  class="img-fluid rounded-start"
+                  alt="Product"
+                />
+              </div>
+              <div class="col-md-8 position-relative">
+                <div class="card-body">
+                  <h5 class="card-title text-green">Yumitos Chilli</h5>
+                  <p class="card-text">1 x $10.25</p>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0 m-1"
+                  aria-label="Close"
+                ></button>
+              </div>
+            </div>
+          </div> -->
+            </div>
+            <div class="modal-footer">
+              <div class="container text-center">
+                <button
+                  type="button"
+                  class="btn btn-dark ms-2 px-5 py-2 btn-orange"
+                >
+                  Check Out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Card product -->
-      <div class="container">
+      <div class="container card-container">
         <div class="card m-auto my-3" style="max-width: 90vw">
           <div class="row g-0">
             <div class="col-md-4">
