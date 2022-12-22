@@ -11,7 +11,7 @@ const showData = async (genre = "") => {
         const { id, name, price, image1, image2, image3, image4, description } = product;
         container.innerHTML += `
         <div class="card m-auto my-3" style="max-width: 90vw">
-            <div class="row g-0">
+            <div class="row g-0 align-items-center">
                 <div class="col-md-4">
                     <div
                         id="carousel${id}"
@@ -102,15 +102,14 @@ const showData = async (genre = "") => {
                         </button>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 align-items-center">
                     <div class="card-body p-5">
                     <p class="card-text text-orange">SNEAKER COMPANY</p>
                     <h5 class="card-title fs-2">${name}</h5>
                     <p class="card-text">
                         ${description}
                     </p>
-                    <p class="card-text fs-4 total-products ${id}" id="${price}">Total: $${price}</p>
-                    <p class="card-text fs-6">Unidad: $${price}</p>
+                    <p class="card-text fs-4 total-products ${id}" id="${price}">Precio: $${price}</p>
                     <div class="container d-flex align-items-center">
                         <div class="input-group w-25 bg-light py-0">
                             <button

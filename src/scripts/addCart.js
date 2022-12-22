@@ -10,6 +10,7 @@ const addCart = () => {
         btn.addEventListener('click', async () => {
             let arrInputs = Array.from(inputProducts)
             let cantidad = arrInputs.find(inpt => inpt.getAttribute('id') === btn.getAttribute('id')).value;
+            arrInputs.find(inpt => inpt.getAttribute('id') === btn.getAttribute('id')).value = 0;
 
             const data = await getData(API_URL);
             let product = data.data.find(prod => prod.id === btn.getAttribute('id'));
@@ -25,7 +26,18 @@ const addCart = () => {
 
             if (cantidad > 0) {
                 let prodsLocalStorage = JSON.parse(localStorage.getItem('cartSneakers')) || [];
-                localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, newProduct]));
+                if (!!prodsLocalStorage.find(e => e.id === newProduct.id)) {
+                    newProduct.quantity = Number(newProduct.quantity) + Number(cantidad);
+                    console.log(newProduct);
+                    let prod = prodsLocalStorage.filter(e => e.id === newProduct.id);
+                    localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, prod]));
+
+                } else {
+                    localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, newProduct]));
+                }
+
+
+
             }
 
             showCart();
