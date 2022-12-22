@@ -17,7 +17,7 @@ const addCart = () => {
                 let prodsLocalStorage = JSON.parse(localStorage.getItem('cartSneakers')) || [];
                 localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, product]));
             }
-
+            //Pinte carrito con total
         })
     });
 }
