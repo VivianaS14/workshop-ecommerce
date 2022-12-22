@@ -23,21 +23,10 @@ const addCart = () => {
                 description: product.description,
                 quantity: cantidad
             }
+            let prodsLocalStorage = JSON.parse(localStorage.getItem('cartSneakers')) || [];
 
-            if (cantidad > 0) {
-                let prodsLocalStorage = JSON.parse(localStorage.getItem('cartSneakers')) || [];
-                if (!!prodsLocalStorage.find(e => e.id === newProduct.id)) {
-                    newProduct.quantity = Number(newProduct.quantity) + Number(cantidad);
-                    console.log(newProduct);
-                    let prod = prodsLocalStorage.filter(e => e.id === newProduct.id);
-                    localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, prod]));
-
-                } else {
-                    localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, newProduct]));
-                }
-
-
-
+            if (cantidad > 0 && !prodsLocalStorage.find(e => e.id === newProduct.id)) {
+                localStorage.setItem('cartSneakers', JSON.stringify([...prodsLocalStorage, newProduct]));
             }
 
             showCart();

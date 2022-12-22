@@ -110,8 +110,8 @@ const showData = async (genre = "") => {
                         ${description}
                     </p>
                     <p class="card-text fs-4 total-products ${id}" id="${price}">Precio: $${price}</p>
-                    <div class="container d-flex align-items-center">
-                        <div class="input-group w-25 bg-light py-0">
+                    <div class="container d-flex align-items-center flex-wrap">
+                        <div id="input-group" class="input-group bg-light py-0">
                             <button
                                 class="btn text-orange fs-5 button-minus"
                                 type="button"
@@ -138,7 +138,7 @@ const showData = async (genre = "") => {
                         </div>
                         <button
                             type="button"
-                            class="btn btn-dark ms-2 px-5 py-2 btn-orange btn-add-cart"
+                            class="btn btn-dark btn-orange btn-add-cart"
                             id="${id}"
                         >
                             <img src="./images/icon-cart-copy.svg" alt="" />
